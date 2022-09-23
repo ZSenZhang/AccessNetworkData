@@ -1,0 +1,17 @@
+This folder contains all the data we have from the experiment. Basically the trip are taken in the following ways:
+1. San Diego CA -> Maryland -> South Calorina -> Geogia -> Portland -> San Diego CA. 
+2. San Diego CA -> Colorado -> Utah -> San Diego CA. 
+3. San Diego CA -> IDAHO -> New Mexico -> San Diego CA.
+4. San Diego CA -> Nashville TN -> Florida -> Boston -> Monterey CA -> San Diego CA.
+
+In the data, there are mainly three providers which are AT&T T-mobile and Verizon, and the ipv4 scamper results are in \*\_wartsv4\_\* folders while the ipv6 scamper results are in \*\_wartsv6\_\* folders. We have ipv6 results for T-mobile and Verizon but some of the AT&T's IPv6 result is missing because we use AT&T pre-paid plan in the beginning which does not have ipv6 address. We switched to AT&T post-paid plan latter on so that we have IPv6 result.
+
+For IPv6 results from San Diego to Maryland (i.e. the data in "second_SD_MD_raw" folder) all the first three hops in T-mobile results and first five hops in Verizon results are stars (i.e. "\*"). This is not because these hops never reply to us but because I asked the scamper to jump thesee hops to avoid "loop problem". Latter during the trip from Maryland to Geogia to Portland to San Diego, I fixed this problem and you would be able to see the first few hops in T-mobile and Verizon in the data in . You would still see the hop 2 to 5 are still stars, but yes, that's because these hops never respond to us.
+
+The location information of each experiment is in \*\_OUTPUT\_\* folder, you would see the CellID, TAC, MNC and MMC in the cellinfo.
+
+For the rest of the folders, \*\_google\_warts\_\* and \*\_Netflix\_warts\_\* contains the traceroute results to google and Netflix CDN. \*\_sysinfo\_\* contains the traceroute results to CAIDA server as well as some cellsites information. 
+
+To lookup cellsites information and map the geo-location, please refer to https://www.opencellid.org/. 
+
+The scamper_arm is the folder you can run scamper on Android by using ADB shell. Copy the scamper bash file to /data/local/tmp path and run.
