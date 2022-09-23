@@ -13,5 +13,3 @@ The location information of each experiment is in \*\_OUTPUT\_\* folder, you wou
 For the rest of the folders, \*\_google\_warts\_\* and \*\_Netflix\_warts\_\* contains the traceroute results to google and Netflix CDN. \*\_sysinfo\_\* contains the traceroute results to CAIDA server as well as some cellsites information. 
 
 To lookup cellsites information and map the geo-location, please refer to https://www.opencellid.org/. 
-
-The scamper_arm is the folder you can run scamper on Android by using ADB shell. Copy the scamper bash file to /data/local/tmp path and run.
